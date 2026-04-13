@@ -9,15 +9,13 @@ const Navbar = () => {
 
     const navbarLinks = (
     <>
-      <li>
-        <NavLink to={'/'} className={({ isActive }) => `${isActive ? "text-white bg-green-500" : ""}`}>Home</NavLink>
-      </li>
-      <li>
-        <NavLink to={'/timeLine'} className={({ isActive }) => `${isActive ? "text-white bg-green-500" : ""}`}>Listed Books</NavLink>
-      </li>
-      <li>
-        <NavLink to={'/stats'} className={({ isActive }) => `${isActive ? "text-white bg-green-500" : ""}`}>Page to</NavLink>
-      </li>
+      
+        <NavLink to={'/'} className={({ isActive }) => `btn btn-dash btn-success text-black hover:text-white transition-all duration-300 ${isActive ? "text-white bg-[#244D3F]" : ""}`}><RiHomeGearFill size={15} />Home</NavLink>
+      
+        <NavLink to={'/timeLine'} className={({ isActive }) => `btn btn-dash btn-success text-black  hover:text-white transition-all duration-300 ${isActive ? "text-white bg-[#244D3F]" : ""}`}><TbClockCog size={15} />Timeline</NavLink>
+      
+        <NavLink to={'/stats'} className={({ isActive }) => `btn btn-dash btn-success text-black hover:text-white transition-all duration-300 ${isActive ? "text-white bg-[#244D3F]" : ""}`}><ImStatsDots size={15} />Stats</NavLink>
+
     </>
   )
   
@@ -26,7 +24,7 @@ const Navbar = () => {
 
             <div className="navbar w-11/12 mx-auto flex justify-between ">
                 <div className="">
-                    <a className="text-2xl text-[#005822] font-bold"><span className='text-[#1F2937] '>Keen</span>Keeper</a>
+                    <a className="text-2xl text-[#244D3F] font-bold"><span className='text-[#1F2937] '>Keen</span>Keeper</a>
                 </div>
 
                 <div className="dropdown dropdown-end">
@@ -35,17 +33,13 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="1"
-                        className="menu menu-sm dropdown-content bg-base-200 rounded-box z-50 mt-8 w-40 p-2 shadow ">
-                        <li><a><RiHomeGearFill/> Home</a></li>
-                        <li><a><TbClockCog /> Timeline</a></li>
-                        <li><a><ImStatsDots /> Stats</a></li>
+                        className="menu menu-sm dropdown-content bg-base-200 rounded-box z-50 mt-8 w-40 p-2 shadow gap-3">
+                        {navbarLinks}
                     </ul>
                 </div>
 
-                <div className="hidden md:flex gap-2 items-center ">
-                    <button className="btn"><RiHomeGearFill size={15} />Home</button>
-                    <button className="btn"><TbClockCog size={15} />Timeline</button>
-                    <button className="btn"><ImStatsDots size={15} />Stats</button>
+                <div className="hidden md:flex gap-3 items-center ">
+                   {navbarLinks}
                 </div>
             </div>
 
