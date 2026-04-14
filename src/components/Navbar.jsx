@@ -24,7 +24,7 @@ const Navbar = () => {
 
             <div className="navbar w-11/12 mx-auto flex justify-between ">
                 <div className="">
-                    <a className="text-2xl text-[#244D3F] font-bold"><span className='text-[#1F2937] '>Keen</span>Keeper</a>
+                    <a className="text-3xl text-[#244D3F] font-bold cursor-pointer"><span className='text-[#1F2937] '>Keen</span>Keeper</a>
                 </div>
 
                 <div className="dropdown dropdown-end">
