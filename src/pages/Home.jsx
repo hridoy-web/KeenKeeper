@@ -9,7 +9,7 @@ const Home = () => {
 
     const friendsData = useLoaderData()
 
-    console.log(friendsData, 'friendsData')
+    // console.log(friendsData, 'friendsData')
 
     return (
         <div className='w-11/12 mx-auto'>
