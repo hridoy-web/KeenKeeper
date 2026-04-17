@@ -38,8 +38,9 @@ const FriendDetails = () => {
         }
     }
 
-const recentInteractions = history
-    .filter(item => item.title.includes(expectedFriend.name)) 
+    const recentInteractions = history
+        .filter(item => item.title.includes(expectedFriend.name))
+        .slice(0, 3)
 
     return (
         <div className='w-11/12 mx-auto my-10 md:my-16 flex flex-col md:flex-row gap-8'>
@@ -136,39 +137,39 @@ const recentInteractions = history
                         <Link to={'/timeLine'} className='btn mb-3 md:mb-0'><FaClockRotateLeft size={12} />Full History</Link>
                     </div>
 
-{
-                recentInteractions.length === 0 ? (
+                    {
+                        recentInteractions.length === 0 ? (
 
-                    <div className='flex flex-col items-center justify-center text-center p-12 bg-gray-100 border border-gray-200 rounded-3xl'>
-                        <div className='flex gap-2 items-center mb-3'>
-                            <span><TbHistoryOff md:size={25} /></span>
-                            <p className='text-gray-600 font-semibold text-xl md:text-2xl'>No History Added</p>
-                        </div>
-                    </div>
-
-                ) : (
-                    recentInteractions.map(item => (
-                       
-                            <div key={item.id} className=' bg-gray-100 p-5 rounded-2xl  border-2 border-gray-200 space-y-4 mb-4 '>
-
-                            <div className='flex items-center gap-4 transition-all duration-200 hover:text-green-600 cursor-pointer  '>
-
-                                {/* icon conditional rendering */}
-                                {
-                                    item.type === "Call" ? (<PiPhoneCallFill size={30} />) : item.type === "Meet" ? (<MdVideoCameraFront size={30} />) : (<FaEnvelopeOpenText size={25} />)
-                                }
-
-                                <div>
-                                    <p className='font-medium text-lg'>{item.title}</p>
-                                    <p className='text-lg text-gray-600'>{item.date}</p>
+                            <div className='flex flex-col items-center justify-center text-center p-12 bg-gray-100 border border-gray-200 rounded-3xl'>
+                                <div className='flex gap-2 items-center mb-3'>
+                                    <span><TbHistoryOff md:size={25} /></span>
+                                    <p className='text-gray-600 font-semibold text-xl md:text-2xl'>No History Added</p>
                                 </div>
                             </div>
 
-                        </div>
-                        
-                    ))
-                )
-            }
+                        ) : (
+                            recentInteractions.map(item => (
+
+                                <div key={item.id} className=' bg-gray-100 p-5 rounded-2xl  border-2 border-gray-200 space-y-4 mb-4 '>
+
+                                    <div className={`flex items-center gap-4 transition-all duration-200 cursor-pointer ${item.type === "Call" ? "hover:text-blue-600" : item.type === "Meet" ? "hover:text-green-600 " : "hover:text-pink-600 "} `}>
+
+                                        {/* icon conditional rendering */}
+                                        {
+                                            item.type === "Call" ? (<PiPhoneCallFill size={30} />) : item.type === "Meet" ? (<MdVideoCameraFront size={30} />) : (<FaEnvelopeOpenText size={25} />)
+                                        }
+
+                                        <div>
+                                            <p className='font-medium text-lg'>{item.title}</p>
+                                            <p className='text-lg text-gray-600'>{item.date}</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            ))
+                        )
+                    }
 
                 </div>
             </div>

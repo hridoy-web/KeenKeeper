@@ -22,26 +22,29 @@ const TimeLine = () => {
 
 
     return (
-        <div className='w-11/12 md:max-w-5xl mx-auto my-8 bg-base-200 p-8 rounded-2xl shadow-sm'>
-             
+        <div className='w-11/12 md:max-w-5xl mx-auto my-8 md:my-16 '>
+
             <h2 className='text-2xl md:text-3xl font-bold mb-4'>TimeLine</h2>
+
+
             {
                 history.length === 0 ? (
 
-                    <div className='flex flex-col items-center justify-center text-center p-12 bg-gray-100 border border-gray-200 rounded-3xl'>
+                    <div className='bg-base-200 border-2 border-gray-200 p-8 rounded-2xl flex flex-col items-center justify-center text-center py-16'>
+
                         <div className='flex gap-2 items-center mb-3'>
                             <span><TbHistoryOff md:size={25} /></span>
                             <p className='text-gray-600 font-semibold text-xl md:text-2xl'>No History Added</p>
                         </div>
-                        <Link to={"/"}  className='btn bg-green-700 text-white hover:scale-95 transition-all duration-500'>Go to home page</Link>
+                        <Link to={"/"} className='btn bg-green-700 text-white hover:scale-95 transition-all duration-500'>Go to home page</Link>
                     </div>
 
                 ) : (
                     history.map(item => (
-                       
-                            <div className=' bg-gray-100 p-5 rounded-2xl  border-2 border-gray-200 space-y-4 mb-4 hover:scale-105 transition-all duration-700'>
 
-                            <div className='flex items-center gap-4 transition-all duration-200 hover:text-green-600 cursor-pointer  '>
+                        <div className=' bg-gray-100 p-5 rounded-2xl  border-2 border-gray-200 space-y-4 mb-4 hover:scale-105 transition-all duration-700'>
+
+                            <div className={`flex items-center gap-4 transition-all duration-200 cursor-pointer ${item.type === "Call" ? "hover:text-blue-600" : item.type === "Meet" ? "hover:text-green-600 " : "hover:text-pink-600 "} `}>
 
                                 {/* icon conditional rendering */}
                                 {
@@ -55,12 +58,13 @@ const TimeLine = () => {
                             </div>
 
                         </div>
-                        
+
                     ))
                 )
             }
-
         </div>
+
+
     );
 };
 

@@ -11,3 +11,9 @@
 body {
   overflow-x: hidden;
 }
+
+.recharts-wrapper:focus, 
+.recharts-surface:focus, 
+.recharts-sector:focus {
+    outline: none !important;
+}
