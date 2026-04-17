@@ -5,7 +5,7 @@ import { FaClockRotateLeft } from 'react-icons/fa6';
 import { MdDeleteSweep, MdVideoCameraFront } from 'react-icons/md';
 import { PiPhoneCallFill } from 'react-icons/pi';
 import { VscCopilotSnooze } from 'react-icons/vsc';
-import { useLoaderData, useParams } from 'react-router';
+import { Link, useLoaderData, useParams } from 'react-router';
 import { TimelineContext } from '../context/TimelineContext';
 import { toast, ToastContainer } from 'react-toastify';
 import { TbHistoryOff } from 'react-icons/tb';
@@ -40,7 +40,6 @@ const FriendDetails = () => {
 
 const recentInteractions = history
     .filter(item => item.title.includes(expectedFriend.name)) 
-
 
     return (
         <div className='w-11/12 mx-auto my-10 md:my-16 flex flex-col md:flex-row gap-8'>
@@ -134,7 +133,7 @@ const recentInteractions = history
                     <div className='flex flex-col sm:flex-row gap-3 sm:justify-between items-center'>
 
                         <h3 className='text-2xl font-medium'>Recent Interactions</h3>
-                        <button className='btn mb-3 md:mb-0'><FaClockRotateLeft size={12} />Full History</button>
+                        <Link to={'/timeLine'} className='btn mb-3 md:mb-0'><FaClockRotateLeft size={12} />Full History</Link>
                     </div>
 
 {

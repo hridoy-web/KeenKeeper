@@ -13,7 +13,7 @@ const TimeLine = () => {
 
     const { history } = useContext(TimelineContext)
 
-    console.log(history, "History");
+    // console.log(history, "History");
 
 
     //     const getIcon = { type } => {

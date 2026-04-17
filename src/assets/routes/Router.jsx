@@ -5,12 +5,14 @@ import Home from "../../pages/Home";
 import FriendDetails from "../../pages/FriendDetails";
 import TimeLine from "../../pages/TimeLine";
 import Stats from "../../pages/Stats";
+import Loading from "../../components/Loading";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
+        hydrateFallbackElement: <Loading />,
         errorElement: <ErrorPage />,
         children: [
 
