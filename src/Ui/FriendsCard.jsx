@@ -8,7 +8,7 @@ const FriendsCard = ({ friend }) => {
     return (
 
         <Link to={`/friend/${id}`} className='bg-base-200 p-6 flex flex-col items-center space-y-2 rounded-3xl shadow-md border border-gray-200 cursor-pointer transition-all duration-500 hover:scale-105 '>
-            <img className='w-20 h-20 rounded-full' src={friend.picture} alt={friend.name} />
+            <img className='w-20 h-20 rounded-full ring ring-offset-2 ring-gray-200' src={friend.picture} alt={friend.name} />
             <h3>{friend.name}</h3>
             <p>{friend.days_since_contact}days ago</p>
             <div className='flex gap-3 mt-1.5'>
