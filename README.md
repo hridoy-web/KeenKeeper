@@ -1,16 +1,34 @@
-# React + Vite
+# 👥 KeenKeeper — Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**KeenKeeper** is a professional friendship management system designed to help users maintain consistent connections with their friends. It provides a structured way to track interactions, set communication goals, and analyze friendship health through data visualization.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
+* **Frontend:** React.js (Vite)
+* **Routing:** React Router DOM
+* **Styling:** Tailwind CSS & DaisyUI
+* **Charts:** Recharts (Data Visualization)
+* **State Management:** React Context API
+* **Notifications:** React Toastify 
+* **Icons:** React Icons
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Key Features
+
+### 1. 📊 Friendship Analytics (Stats Page)
+Utilizes **Recharts** to provide a visual breakdown of interactions. A dynamic **Pie Chart** tracks the frequency of Calls, Texts, and Video meets, helping users understand their communication patterns at a glance.
+
+### 2. ⚡ Smart Timeline & Tracking
+The **Timeline** page automatically logs every interaction made from the Friend Details page.
+
+### 3. 📱 Fully Responsive Design
+Built with a mobile-first approach using **Tailwind CSS**. The application is fully optimized for all screen sizes.
+
+
